@@ -14,4 +14,8 @@
   function upd(){var w=b.firstElementChild.getBoundingClientRect().width+16,n=Math.round(b.scrollLeft/w);ds.forEach(function(d,i){d.classList.toggle('on',i===n)});}
   b.addEventListener('scroll',upd,{passive:true});
   document.querySelectorAll('.barrow').forEach(function(a){a.addEventListener('click',function(){var w=b.firstElementChild.getBoundingClientRect().width+16;b.scrollBy({left:a.dataset.d*w,behavior:'smooth'})})});
+  var hold=0;function step(){if(Date.now()<hold)return;var w=b.firstElementChild.getBoundingClientRect().width+16,n=Math.round(b.scrollLeft/w),last=b.children.length-1;b.scrollTo({left:(n>=last?0:n+1)*w,behavior:'smooth'});}
+  ['touchstart','mouseenter','wheel'].forEach(function(ev){b.addEventListener(ev,function(){hold=Date.now()+6000},{passive:true})});
+  document.querySelectorAll('.barrow').forEach(function(a){a.addEventListener('click',function(){hold=Date.now()+6000})});
+  setInterval(step,3500);
 })();
