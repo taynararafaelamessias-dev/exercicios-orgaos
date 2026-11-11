@@ -107,12 +107,10 @@ footer p+p{margin-top:6px}
 .bump .bprice{font-family:var(--display);font-weight:800;color:var(--orange);font-size:1.6rem;margin-top:10px}
 .opt{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;background:var(--postit);color:var(--navy);padding:3px 10px;border-radius:20px;margin-left:6px;vertical-align:middle}
 
-/* bônus lado a lado (arrastar) */
-.bonos{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;align-items:flex-start;-webkit-overflow-scrolling:touch;padding:6px 4px 18px;margin-left:-4px;margin-right:-4px;scrollbar-width:none}
-.bonos::-webkit-scrollbar{display:none}
-.bonos .bcard{flex:0 0 86%;scroll-snap-align:center}
-@media(min-width:700px){.bonos .bcard{flex:0 0 calc(50% - 8px)}}
-.swipe{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;font-size:.85rem;font-weight:600;color:var(--muted)}
-.dots{display:flex;gap:6px}.dots i{width:8px;height:8px;border-radius:50%;background:#cfd5df;display:block;transition:background .2s,width .2s}
-.dots i.on{background:var(--orange);width:20px;border-radius:6px}
-.barrow{border:0;background:var(--navy);color:#fff;width:34px;height:34px;border-radius:50%;font-size:1rem;cursor:pointer}
+/* bônus rolando sozinhos (igual ao carrossel) */
+.bmarq{margin-top:22px}
+.bmarq .btrack{align-items:flex-start;animation:roll 55s linear infinite}
+.bmarq .bcard{flex:0 0 300px;text-align:left}
+@media(min-width:640px){.bmarq .bcard{flex:0 0 340px}}
+.bmarq:hover .btrack{animation-play-state:running}
+.bmarq.hold .btrack{animation-play-state:paused}
