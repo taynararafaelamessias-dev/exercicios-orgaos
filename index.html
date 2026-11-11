@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Veja, Escreva, Memorize</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mais de 120 páginas de exercícios visuais para memorizar os órgãos do corpo humano praticando. PDF para imprimir ou usar no tablet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+
+:root{
+  --navy:#13294b; --navy-2:#1d3a66; --orange:#e8590c; --green:#2f9e44; --green-d:#2b8a3e;
+  --postit:#ffe066; --ink:#1b2333; --muted:#5c6577; --paper:#ffffff; --soft:#f2f5fa; --line:#dfe3ea;
+  --display:"Poppins","Segoe UI",system-ui,sans-serif; --body:"Inter","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0;color:var(--navy)}
+h2{font-size:clamp(1.5rem,5vw,2rem);text-align:center}
+p{margin:0}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+section{padding-block:48px}
+.band-soft{background:var(--soft)}
+.band-navy{background:var(--navy);color:#fff}
+.band-navy h2{color:#fff}
+
+/* barra superior */
+.topbar{background:var(--navy);color:#fff;font-size:.86rem;font-weight:600;text-align:center;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px))}
+.topbar b{color:var(--postit)}
+
+/* hero */
+.hero{padding-block:34px 40px;text-align:center}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.hero h1{font-size:clamp(1.8rem,6.6vw,2.7rem);font-weight:800}
+.hero h1 .num{color:var(--orange)}
+.hero h1 mark{background:linear-gradient(transparent 58%,var(--postit) 58%);color:inherit;padding:0 .1em}
+.hero .sub{margin:16px auto 0;max-width:34ch;color:var(--muted);font-size:1.05rem}
+.hero img{margin:26px auto 6px}
+.seals{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;margin:12px 0 22px;font-size:.88rem;font-weight:600;color:var(--navy)}
+.seals span::before{content:"✓ ";color:var(--green)}
+
+/* botón */
+.cta{display:block;width:100%;max-width:460px;margin:0 auto;background:var(--green);color:#fff;text-decoration:none;text-align:center;font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.02em;padding:18px 20px;border-radius:12px;box-shadow:0 6px 0 var(--green-d),0 12px 24px rgba(47,158,68,.25);transition:transform .12s,box-shadow .12s}
+.cta:hover{transform:translateY(-2px)}
+.cta:active{transform:translateY(3px);box-shadow:0 3px 0 var(--green-d)}
+.cta:focus-visible{outline:3px solid var(--postit);outline-offset:3px}
+.cta small{display:block;font-family:var(--body);font-weight:500;font-size:.78rem;opacity:.9;letter-spacing:0;margin-top:2px}
+
+/* dolor */
+.pain{display:grid;gap:18px}
+.pain p{font-size:1.05rem}
+.postit{background:var(--postit);padding:16px 18px;transform:rotate(-1deg);box-shadow:0 6px 14px rgba(0,0,0,.12);font-weight:500}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.who span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;font-weight:600;color:var(--navy);text-align:center;font-size:.95rem}
+
+/* carrusel: escalera automática */
+.car-head{display:grid;gap:8px;text-align:center;margin-bottom:22px}
+.car-head p{color:var(--muted)}
+.marquee{overflow:hidden;width:100%;padding-block:6px 14px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mtrack{display:flex;gap:16px;width:max-content;animation:roll 75s linear infinite}
+.marquee:hover .mtrack,.marquee.hold .mtrack{animation-play-state:paused}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 8px))}}
+.slide{flex:none;width:230px;margin:0}
+.slide img{width:100%;border-radius:10px;box-shadow:0 6px 18px rgba(19,41,75,.15);background:#fff}
+.slide figcaption{text-align:center;font-size:.85rem;font-weight:600;color:var(--navy);margin-top:8px}
+@media (min-width:640px){.slide{width:280px}}
+
+/* lista con check */
+.checks{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.checks li::before{content:"✓";flex:none;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-weight:700;display:grid;place-items:center;font-size:.85rem}
+
+/* método */
+.steps{display:grid;gap:14px;margin-top:24px;counter-reset:s}
+.step{display:flex;gap:14px;align-items:flex-start}
+.step::before{counter-increment:s;content:counter(s);flex:none;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--display);font-weight:700;display:grid;place-items:center;font-size:1.1rem}
+.step b{display:block;font-family:var(--display);color:#fff;font-size:1.1rem}
+.step span{color:#cfd8e8}
+
+/* para quien desea */
+.want{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.want div{background:var(--soft);border-radius:12px;padding:16px;font-weight:600;color:var(--navy);font-size:.95rem}
+
+/* bonos */
+.bintro{text-align:center;color:var(--muted);margin-top:10px}
+.bonos{display:grid;gap:26px;margin-top:24px}
+.bcard{background:#fff;border:2px solid var(--bc);border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(19,41,75,.10)}
+.bhead{background:var(--bc);color:#fff;padding:14px 18px}
+.bhead span{font-size:.75rem;font-weight:700;letter-spacing:.16em;opacity:.9}
+.bhead h3{color:#fff;font-size:1.3rem;margin-top:2px}
+.bbody{padding:18px;display:grid;gap:10px}
+.bbox{width:100%;max-width:340px;margin:0 auto}
+.bdesc{font-size:1rem}
+.blabel{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bc);margin-top:8px}
+.binside{position:relative;width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;box-shadow:0 6px 18px rgba(19,41,75,.12)}
+.binside img{display:block;width:100%;height:auto}
+.binside.cut::after{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(rgba(255,255,255,0),#fff)}
+.binc{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.binc li{display:flex;gap:8px;font-size:.96rem}
+.binc li::before{content:"✓";color:var(--bc);font-weight:800}
+.bben{background:var(--postit);padding:12px 14px;font-size:.95rem;margin-top:6px}
+
+.smore{font-size:.8rem;color:var(--muted);text-align:center}
+
+/* precio */
+.price{background:#fff;border:3px solid var(--green);border-radius:18px;padding:26px 22px;max-width:480px;margin:24px auto 0;text-align:center;box-shadow:0 14px 34px rgba(19,41,75,.12)}
+.price h3{font-size:1.25rem}
+.price ul{list-style:none;padding:0;margin:16px 0;text-align:left;display:grid;gap:8px}
+.price li::before{content:"✓ ";color:var(--green);font-weight:700}
+.amount{font-family:var(--display);font-weight:800;font-size:3.2rem;color:var(--navy);line-height:1;margin:6px 0 4px}
+.amount-note{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+
+/* garantía */
+.guarantee{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:center}
+.seal{width:96px;height:96px;border-radius:50%;background:var(--postit);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;color:var(--navy);line-height:1;border:4px dashed var(--navy)}
+.seal small{display:block;font-size:.7rem;font-weight:700}
+.guarantee h2{text-align:left}
+.guarantee p{margin-top:8px}
+
+/* faq */
+.faq{display:grid;gap:10px;margin-top:22px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.faq summary{cursor:pointer;font-weight:600;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--orange);font-weight:700;font-size:1.2rem}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:10px;color:var(--muted)}
+
+footer{background:var(--navy);color:#b9c4d6;font-size:.8rem;text-align:center;padding-block:28px}
+footer p+p{margin-top:6px}
+
+@media (min-width:640px){
+  .who{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:420px){
+  .guarantee{grid-template-columns:1fr;text-align:center}.guarantee h2{text-align:center}.seal{margin:0 auto}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta{transition:none}}
+.bump{background:#fff;border:3px dashed var(--orange);border-radius:18px;padding:22px 18px;margin-top:22px;text-align:center}
+.bump .tagx{display:inline-block;background:var(--orange);color:#fff;font-family:var(--display);font-weight:700;font-size:.8rem;letter-spacing:.12em;padding:6px 14px;border-radius:30px}
+.bump h3{margin-top:12px;font-size:1.3rem}.bump p{margin-top:8px;color:var(--muted)}
+.bump .bprice{font-family:var(--display);font-weight:800;color:var(--orange);font-size:1.6rem;margin-top:10px}
+.opt{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;background:var(--postit);color:var(--navy);padding:3px 10px;border-radius:20px;margin-left:6px;vertical-align:middle}
+</style>
+<!--PIXEL-->
+</head>
+<body>
+<div class="topbar">📘 PDF para imprimir ou usar no tablet · <b>Acesso imediato</b> após a compra</div>
+
+<header class="hero wrap">
+  <span class="eyebrow">Veja · Escreva · Memorize</span>
+  <h1><span class="num">+120</span> páginas de exercícios visuais para memorizar os órgãos do corpo humano <mark>praticando, não só lendo</mark></h1>
+  <p class="sub">Complete, corrija com a solução e chegue na prova sabendo onde fica cada órgão e a qual sistema ele pertence.</p>
+  <img src="imagens/hero_caderno.webp" alt="Caderno de exercícios dos órgãos com algumas das suas páginas" width="900" height="707">
+  <div class="seals"><span>Acesso imediato</span><span>100% digital</span><span>PDF para imprimir</span></div>
+  <a class="cta" href="#oferta">QUERO MEU CADERNO<small>Pagamento único de R$ 14,99</small></a>
+</header>
+
+<section class="band-soft">
+  <div class="wrap pain">
+    <h2>Você lê a matéria inteira e na prova não lembra onde fica cada coisa?</h2>
+    <p>Acontece com muita gente: você grifa, faz resumo, lê três vezes… e quando a imagem aparece na prova, confunde os órgãos.</p>
+    <p class="postit">Ler não é o mesmo que praticar. Para lembrar onde fica cada estrutura, você precisa escrever.</p>
+    <p><b>Este caderno é para você se estuda para:</b></p>
+    <div class="who"><span>Técnico em Enfermagem</span><span>Enfermagem</span><span>ENEM e vestibular</span><span>Concursos da saúde</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="car-head">
+      <h2>Veja o material por dentro</h2>
+      <p>Assim são as páginas do caderno e os bônus da oferta do checkout.</p>
+    </div>
+  </div>
+  <div class="marquee" id="marquee" aria-label="Páginas do caderno e bônus">
+      <div class="mtrack"><figure class="slide"><img src="imagens/carrossel_01.webp" alt="Órgãos do tronco"><figcaption>Órgãos do tronco</figcaption></figure><figure class="slide"><img src="imagens/carrossel_02.webp" alt="O coração: corte interno"><figcaption>O coração: corte interno</figcaption></figure><figure class="slide"><img src="imagens/carrossel_03.webp" alt="O olho: vista externa"><figcaption>O olho: vista externa</figcaption></figure><figure class="slide"><img src="imagens/carrossel_04.webp" alt="O encéfalo: corte sagital"><figcaption>O encéfalo: corte sagital</figcaption></figure><figure class="slide"><img src="imagens/carrossel_05.webp" alt="As meninges"><figcaption>As meninges</figcaption></figure><figure class="slide"><img src="imagens/carrossel_06.webp" alt="O néfron"><figcaption>O néfron</figcaption></figure><figure class="slide"><img src="imagens/carrossel_07.webp" alt="A orelha"><figcaption>A orelha</figcaption></figure><figure class="slide"><img src="imagens/carrossel_08.webp" alt="Os alvéolos"><figcaption>Os alvéolos</figcaption></figure><figure class="slide"><img src="imagens/carrossel_09.webp" alt="A boca e os dentes"><figcaption>A boca e os dentes</figcaption></figure><figure class="slide"><img src="imagens/carrossel_10.webp" alt="Relacione cada órgão ao seu sistema"><figcaption>Relacione cada órgão ao seu sistema</figcaption></figure><figure class="slide"><img src="imagens/carrossel_11_pacote.webp" alt="Caderno + oferta do checkout"><figcaption>Caderno + oferta do checkout</figcaption></figure><figure class="slide"><img src="imagens/carrossel_12_bonus1.webp" alt="Oferta do checkout · Bônus 1"><figcaption>Oferta do checkout · Bônus 1</figcaption></figure><figure class="slide"><img src="imagens/carrossel_13_bonus2.webp" alt="Oferta do checkout · Bônus 2"><figcaption>Oferta do checkout · Bônus 2</figcaption></figure><figure class="slide"><img src="imagens/carrossel_14_bonus3.webp" alt="Oferta do checkout · Bônus 3"><figcaption>Oferta do checkout · Bônus 3</figcaption></figure><figure class="slide"><img src="imagens/carrossel_15_bonus4.webp" alt="Oferta do checkout · Bônus 4"><figcaption>Oferta do checkout · Bônus 4</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_01.webp" alt="Órgãos do tronco"><figcaption>Órgãos do tronco</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_02.webp" alt="O coração: corte interno"><figcaption>O coração: corte interno</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_03.webp" alt="O olho: vista externa"><figcaption>O olho: vista externa</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_04.webp" alt="O encéfalo: corte sagital"><figcaption>O encéfalo: corte sagital</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_05.webp" alt="As meninges"><figcaption>As meninges</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_06.webp" alt="O néfron"><figcaption>O néfron</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_07.webp" alt="A orelha"><figcaption>A orelha</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_08.webp" alt="Os alvéolos"><figcaption>Os alvéolos</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_09.webp" alt="A boca e os dentes"><figcaption>A boca e os dentes</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_10.webp" alt="Relacione cada órgão ao seu sistema"><figcaption>Relacione cada órgão ao seu sistema</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_11_pacote.webp" alt="Caderno + oferta do checkout"><figcaption>Caderno + oferta do checkout</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_12_bonus1.webp" alt="Oferta do checkout · Bônus 1"><figcaption>Oferta do checkout · Bônus 1</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_13_bonus2.webp" alt="Oferta do checkout · Bônus 2"><figcaption>Oferta do checkout · Bônus 2</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_14_bonus3.webp" alt="Oferta do checkout · Bônus 3"><figcaption>Oferta do checkout · Bônus 3</figcaption></figure><figure class="slide" aria-hidden="true"><img src="imagens/carrossel_15_bonus4.webp" alt="Oferta do checkout · Bônus 4"><figcaption>Oferta do checkout · Bônus 4</figcaption></figure></div>
+    </div>
+</section>
+
+<section class="band-soft">
+  <div class="wrap">
+    <h2>O que você vai encontrar no caderno</h2>
+    <ul class="checks">
+      <li>60 exercícios, cada um com sua página de solução: 124 páginas no total</li>
+      <li>Ilustrações realistas em 3D com caixinhas numeradas para completar</li>
+      <li>Mais de 450 estruturas de todo o corpo humano</li>
+      <li>Post-its «Você sabia?» com os dados que costumam cair nas provas</li>
+      <li>Revisão final que mistura todos os sistemas, como na prova</li>
+      <li>Anexo «A lupa» com as estruturas pequenas ampliadas</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band-navy">
+  <div class="wrap">
+    <h2>Um método simples: veja, escreva e memorize</h2>
+    <div class="steps">
+      <div class="step"><div><b>Veja</b><span>Observe a ilustração com as estruturas numeradas.</span></div></div>
+      <div class="step"><div><b>Escreva</b><span>Escreva o nome de cada estrutura na caixinha, sem olhar.</span></div></div>
+      <div class="step"><div><b>Memorize</b><span>Confira na página seguinte e refaça os exercícios que errou depois de 2 ou 3 dias.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Este caderno é para quem quer…</h2>
+    <div class="want">
+      <div>Identificar cada órgão e seu sistema com segurança</div>
+      <div>Parar de confundir estruturas parecidas</div>
+      <div>Estudar 10–15 minutos por dia, um sistema por vez</div>
+      <div>Chegar na prova com o corpo todo revisado</div>
+    </div>
+    <div style="margin-top:28px"><a class="cta" href="#oferta">QUERO MEU CADERNO<small>Pagamento único de R$ 14,99</small></a></div>
+  </div>
+</section>
+
+<section class="band-soft" id="oferta">
+  <div class="wrap">
+    <h2>Caderno de exercícios</h2>
+    <div class="price">
+      <h3>Veja, Escreva, Memorize: os Órgãos na Palma da Mão</h3>
+      <ul>
+        <li>+120 páginas de exercícios visuais (PDF, 124 páginas)</li>
+        <li>60 exercícios com página de solução</li>
+        <li>Mais de 450 estruturas · 12 sistemas</li>
+        <li>Revisão final + anexo «A lupa»</li>
+      </ul>
+      <div class="amount">R$ 14,99</div>
+      <p class="amount-note">Pagamento único · Acesso imediato</p>
+      <a class="cta" href="#oferta">QUERO MEU CADERNO</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>No checkout: oferta especial <span class="opt">OPCIONAL</span></h2>
+    <p class="bintro">Na hora da compra, você pode adicionar o <b>Pacote Memorização Rápida dos Órgãos</b> com 4 materiais para revisar mais rápido. É só marcar a caixinha no checkout, se quiser.</p>
+    <img src="imagens/oferta_checkout.webp" alt="Caderno e as 4 caixas do Pacote Memorização Rápida dos Órgãos" style="margin:22px auto 0;max-width:600px;width:100%" loading="lazy" width="900" height="744">
+    <div class="bump">
+      <span class="tagx">SÓ NO CHECKOUT</span>
+      <h3>Pacote Memorização Rápida dos Órgãos</h3>
+      <p>Mapa Rápido dos Sistemas · 100 Cartões de Memorização · Cronograma de 28 Dias · Simulado com 50 Questões Comentadas</p>
+      <div class="bprice">+ R$ 4,99</div>
+    </div>
+    <div class="bonos">
+      <article class="bcard" style="--bc:#0b7285">
+        <header class="bhead"><span>BÔNUS 1</span><h3>Mapa Rápido dos Sistemas</h3></header>
+        <div class="bbody">
+          <img class="bbox" src="imagens/bonus1_caixa.webp" alt="Bônus 1: Mapa Rápido dos Sistemas" loading="lazy">
+          <p class="bdesc">2 páginas para imprimir com todos os sistemas do corpo: os órgãos principais, a função de cada sistema e uma dica para a prova.</p>
+          <p class="blabel">Veja por dentro</p>
+          <div class="binside cut"><img src="imagens/b1_p1.webp" alt="Página do Mapa Rápido dos Sistemas" loading="lazy" width="580" height="273"><img src="imagens/b1_p2.webp" alt="Página do Mapa Rápido dos Sistemas" loading="lazy" width="580" height="273"></div>
+          <p class="smore">Página real do mapa · 2 páginas no total</p>
+          <p class="blabel">O que inclui</p>
+          <ul class="binc"><li>2 páginas A4 para imprimir</li><li>Órgãos e função de cada sistema</li><li>Uma dica para a prova em cada um</li><li>Indica os exercícios do caderno</li></ul>
+          <p class="bben"><b>Para que serve:</b> Revisar o corpo todo em 5 minutos antes da prova.</p>
+        </div>
+      </article>
+      <article class="bcard" style="--bc:#5f3dc4">
+        <header class="bhead"><span>BÔNUS 2</span><h3>100 Cartões de Memorização</h3></header>
+        <div class="bbody">
+          <img class="bbox" src="imagens/bonus2_caixa.webp" alt="Bônus 2: 100 Cartões de Memorização" loading="lazy">
+          <p class="bdesc">Cartões com a pergunta na frente e a resposta atrás. Imprime frente e verso, já alinhados, e recorta.</p>
+          <p class="blabel">Veja por dentro</p>
+          <div class="binside cut"><img src="imagens/b2_p1.webp" alt="Página do 100 Cartões de Memorização" loading="lazy" width="580" height="273"><img src="imagens/b2_p2.webp" alt="Página do 100 Cartões de Memorização" loading="lazy" width="580" height="273"></div>
+          <p class="smore">Página real dos cartões · 100 cartões no total</p>
+          <p class="blabel">O que inclui</p>
+          <ul class="binc"><li>100 cartões, 10 por sistema</li><li>Pergunta na frente, resposta e dado extra atrás</li><li>Instruções para estudar com 3 montinhos</li><li>Também dá para usar no tablet</li></ul>
+          <p class="bben"><b>Para que serve:</b> Revisar a qualquer hora: no ônibus, no intervalo ou antes de dormir.</p>
+        </div>
+      </article>
+      <article class="bcard" style="--bc:#2b8a3e">
+        <header class="bhead"><span>BÔNUS 3</span><h3>Cronograma de 28 Dias</h3></header>
+        <div class="bbody">
+          <img class="bbox" src="imagens/bonus3_caixa.webp" alt="Bônus 3: Cronograma de 28 Dias" loading="lazy">
+          <p class="bdesc">Os 60 exercícios do caderno distribuídos dia a dia em 28 dias, um sistema por vez, com dias de revisão e uma tabela para marcar seu progresso.</p>
+          <p class="blabel">Veja por dentro</p>
+          <div class="binside"><img src="imagens/b3_p1.webp" alt="Página do Cronograma de 28 Dias" loading="lazy" width="580" height="273"><img src="imagens/b3_p2.webp" alt="Página do Cronograma de 28 Dias" loading="lazy" width="580" height="273"><img src="imagens/b3_p3.webp" alt="Página do Cronograma de 28 Dias" loading="lazy" width="580" height="273"></div>
+          <p class="smore">Página real do cronograma · Semana 1 de 4</p>
+          <p class="blabel">O que inclui</p>
+          <ul class="binc"><li>28 dias organizados, 10–15 minutos por dia</li><li>Um dia de revisão por semana</li><li>Tabela de progresso dos 60 exercícios</li><li>Espaço para anotar o que errou</li></ul>
+          <p class="bben"><b>Para que serve:</b> Saber o que estudar a cada dia, sem se perder.</p>
+        </div>
+      </article>
+      <article class="bcard" style="--bc:#c92a2a">
+        <header class="bhead"><span>BÔNUS 4</span><h3>Simulado com 50 Questões Comentadas</h3></header>
+        <div class="bbody">
+          <img class="bbox" src="imagens/bonus4_caixa.webp" alt="Bônus 4: Simulado com 50 Questões Comentadas" loading="lazy">
+          <p class="bdesc">Um simulado de múltipla escolha com todos os sistemas, folha de respostas e gabarito comentado.</p>
+          <p class="blabel">Veja por dentro</p>
+          <div class="binside cut"><img src="imagens/b4_p1.webp" alt="Página do Simulado com 50 Questões Comentadas" loading="lazy" width="580" height="273"><img src="imagens/b4_p2.webp" alt="Página do Simulado com 50 Questões Comentadas" loading="lazy" width="580" height="273"></div>
+          <p class="smore">Página real do simulado · 50 questões no total</p>
+          <p class="blabel">O que inclui</p>
+          <ul class="binc"><li>50 questões com alternativas a, b, c e d</li><li>Folha de respostas para preencher</li><li>Gabarito comentado</li><li>Tabela de nota para ver o que revisar</li></ul>
+          <p class="bben"><b>Para que serve:</b> Conferir o que você já sabe e o que falta revisar.</p>
+        </div>
+      </article>
+    </div>
+    <div style="margin-top:28px"><a class="cta" href="#oferta">QUERO MEU CADERNO<small>Pagamento único de R$ 14,99</small></a></div>
+  </div>
+</section>
+
+<section class="band-soft">
+  <div class="wrap guarantee">
+    <div class="seal">7<small>DIAS DE<br>GARANTIA</small></div>
+    <div>
+      <h2>Garantia de 7 dias</h2>
+      <p>Se nos primeiros 7 dias você perceber que o material não é para você, pede o reembolso pela Hotmart e recebe 100% do valor de volta.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band-navy">
+  <div class="wrap">
+    <h2>Como você recebe o acesso</h2>
+    <div class="steps">
+      <div class="step"><div><b>Compra</b><span>Faça sua compra na página segura da Hotmart.</span></div></div>
+      <div class="step"><div><b>E-mail</b><span>Receba no seu e-mail o acesso ao material.</span></div></div>
+      <div class="step"><div><b>Download</b><span>Baixe os PDFs e imprima ou use no tablet.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>É um livro físico?</summary><p>Não. É um material digital em PDF. Você recebe no seu e-mail logo depois da compra.</p></details>
+      <details><summary>Posso imprimir?</summary><p>Sim. Está em tamanho A4, pronto para imprimir em casa ou numa copiadora.</p></details>
+      <details><summary>Posso usar no tablet?</summary><p>Sim. Você pode escrever por cima com qualquer app de PDF, como GoodNotes, Notability ou Xodo.</p></details>
+      <details><summary>Serve para o meu curso?</summary><p>Cobre a anatomia básica dos órgãos e sistemas do corpo humano estudada no Técnico em Enfermagem, na graduação, no ENEM, no vestibular e em concursos da saúde. É um material de prática: não substitui o conteúdo do seu curso.</p></details>
+      <details><summary>Os 4 bônus vêm junto?</summary><p>Não. Os 4 materiais fazem parte do Pacote Memorização Rápida dos Órgãos, uma oferta opcional de R$ 4,99 que aparece no checkout. Você escolhe se quer adicionar.</p></details>
+      <details><summary>Quanto tempo demora para chegar?</summary><p>No Pix e no cartão, o acesso é imediato após a confirmação do pagamento. No boleto, chega depois da compensação.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Pede o reembolso pela Hotmart e recebe 100% de volta.</p></details>
+      <details><summary>Como posso pagar?</summary><p>Pix, cartão de crédito ou boleto, pela página segura da Hotmart.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band-soft">
+  <div class="wrap" style="text-align:center;display:grid;gap:20px">
+    <h2>Comece hoje a praticar os órgãos do corpo humano</h2>
+    <a class="cta" href="#oferta">QUERO MEU CADERNO<small>Pagamento único de R$ 14,99</small></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Material educativo de apoio aos estudos. Não substitui o conteúdo oficial do seu curso nem a formação de um profissional da saúde.</p>
+    <p>Pagamento processado com segurança pela Hotmart.</p>
+    <p>Este site não faz parte do Facebook nem da Meta Platforms, Inc.</p>
+    <p>© 2026 · Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var m=document.getElementById('marquee');
+  m.addEventListener('touchstart',function(){m.classList.add('hold')},{passive:true});
+  m.addEventListener('touchend',function(){m.classList.remove('hold')});
+  m.addEventListener('touchcancel',function(){m.classList.remove('hold')});
+  document.querySelectorAll('a.cta').forEach(function(a){a.addEventListener('click',function(){try{fbq('track','InitiateCheckout',{value:14.99,currency:'BRL'})}catch(e){}})});
+  var q=new URLSearchParams(location.search),src=q.get('utm_content')||q.get('src')||'',sck=q.get('utm_campaign')||q.get('sck')||'';
+  if(src||sck){document.querySelectorAll('a.cta').forEach(function(a){if(a.getAttribute('href').charAt(0)==='#')return;var u=new URL(a.href);if(src)u.searchParams.set('src',src);if(sck)u.searchParams.set('sck',sck);['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(q.get(k))u.searchParams.set(k,q.get(k))});a.href=u.toString();});}
+})();
+</script>
+</body>
+</html>
