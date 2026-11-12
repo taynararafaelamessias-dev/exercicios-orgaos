@@ -36,7 +36,8 @@ fbq('track', 'PageView');
 .plan{background:#fff;border:2px solid var(--line);border-radius:18px;padding:24px 20px;text-align:center;position:relative}
 .plan.full{border:3px solid var(--green);box-shadow:0 14px 34px rgba(19,41,75,.14)}
 .plan .ptag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-family:var(--display);font-weight:700;font-size:.75rem;letter-spacing:.1em;padding:5px 14px;border-radius:30px;white-space:nowrap}
-.plan h3{font-size:1.2rem}
+.plan h3{font-size:1.15rem;margin-top:6px}
+.plan .pname{color:var(--orange);font-weight:700;font-size:.95rem;margin-top:2px}
 .plan ul{list-style:none;padding:0;margin:14px 0;text-align:left;display:grid;gap:7px;font-size:.95rem}
 .plan li::before{content:"✓ ";color:var(--green);font-weight:700}
 .plan li.x{color:#9aa3b2}.plan li.x::before{content:"✕ ";color:#c0c6d0}
@@ -191,7 +192,8 @@ fbq('track', 'PageView');
     <div class="plans">
       <div class="plan">
         <span class="ptag" style="background:var(--navy)">SÓ O CADERNO</span>
-        <h3>Veja, Escreva, Memorize: os Órgãos na Palma da Mão</h3>
+        <h3>Veja, Escreva, Memorize</h3>
+        <p class="pname">os Órgãos na Palma da Mão</p>
         <ul>
           <li>+120 páginas de exercícios visuais</li>
           <li>60 exercícios com solução</li>
@@ -204,7 +206,7 @@ fbq('track', 'PageView');
       </div>
       <div class="plan full">
         <span class="ptag">CADERNO + 4 BÔNUS</span>
-        <h3>Veja, Escreva, Memorize: os Órgãos na Palma da Mão + Pacote Memorização Rápida dos Órgãos</h3>
+        <h3>Caderno + Pacote Memorização Rápida</h3>
         <ul>
           <li>+120 páginas de exercícios visuais</li>
           <li>60 exercícios com solução</li>
