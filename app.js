@@ -7,7 +7,7 @@
   m.addEventListener('touchstart',function(){m.classList.add('hold')},{passive:true});
   m.addEventListener('touchend',function(){m.classList.remove('hold')});
   m.addEventListener('touchcancel',function(){m.classList.remove('hold')});
-  document.querySelectorAll('a.cta').forEach(function(a){a.addEventListener('click',function(){try{fbq('track','InitiateCheckout',{value:14.99,currency:'BRL'})}catch(e){}})});
+  document.querySelectorAll('a.cta').forEach(function(a){a.addEventListener('click',function(){try{fbq('track','InitiateCheckout',{value:18.99,currency:'BRL'})}catch(e){}})});
   var q=new URLSearchParams(location.search),src=q.get('utm_content')||q.get('src')||'',sck=q.get('utm_campaign')||q.get('sck')||'';
   if(src||sck){document.querySelectorAll('a.cta').forEach(function(a){if(a.getAttribute('href').charAt(0)==='#')return;var u=new URL(a.href);if(src)u.searchParams.set('src',src);if(sck)u.searchParams.set('sck',sck);['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(q.get(k))u.searchParams.set(k,q.get(k))});a.href=u.toString();});}
   var bt=document.getElementById('btrack');
