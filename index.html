@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia da ARMY · o BTS de A a Z</title>
+<meta name="description" content="O BTS de A a Z num guia só seu: +60 páginas pra ler, preencher e colecionar. Guia não oficial, feito por fã, atualizado até 2026.">
+<meta property="og:title" content="Guia da ARMY · o BTS de A a Z">
+<meta property="og:description" content="+60 páginas pra ler, preencher e colecionar. Atualizado até a era ARIRANG (2026).">
+<meta property="og:image" content="img/mockup-principal.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Lora:ital,wght@0,600;0,700;1,500&family=Noto+Sans+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#3B2766;--deep:#4B2A7B;--purple:#7A52C7;--lilac:#B9A6E8;--lav:#F3ECFB;--cream:#FBF7F0;--gold:#D4AE52;--gold2:#B8902F;--pink:#F2A7C3;--line:#E2D7F5}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Lora,serif;color:var(--deep);line-height:1.15}
+h2{font-size:clamp(26px,5vw,38px);text-align:center;margin-bottom:10px}
+.lead{text-align:center;color:#5B3D99;max-width:640px;margin:0 auto 34px;font-size:17px}
+section{padding:64px 0}
+.kr{font-family:"Noto Sans KR",sans-serif}
+.dots{background-image:radial-gradient(#DCD0F0 1.4px,transparent 1.6px);background-size:26px 26px}
+
+/* top bar */
+.bar{background:var(--deep);color:#fff;text-align:center;font-size:13px;font-weight:700;letter-spacing:.06em;padding:10px 12px}
+.bar span{color:#FFE7A6}
+
+/* hero */
+.hero{background:linear-gradient(180deg,#EDE3FB 0%,#F7F0FC 60%,var(--cream) 100%);padding:44px 0 40px;text-align:center;position:relative;overflow:hidden}
+.kick{font-weight:800;letter-spacing:.32em;font-size:12px;color:var(--purple)}
+.kick .kr{letter-spacing:.2em;color:var(--lilac);margin-left:8px}
+.hero h1{font-size:clamp(30px,6.4vw,54px);margin:14px auto 14px;max-width:880px}
+.hero h1 mark{background:linear-gradient(transparent 58%,#F3D27A 58%);color:var(--deep);padding:0 4px}
+.hero p.sub{font-size:clamp(16px,2.4vw,19px);color:#5B3D99;max-width:700px;margin:0 auto}
+.hero .mock{margin:26px auto 4px;max-width:960px;width:100%;height:auto}
+.seals{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0 24px}
+.seals span{background:#fff;border:1.5px solid var(--line);border-radius:30px;padding:8px 16px;font-size:14px;font-weight:700;color:var(--deep)}
+
+/* button */
+.btn{display:inline-block;background:linear-gradient(180deg,#E6C46A,var(--gold) 55%,var(--gold2));color:#2B1650;font-weight:800;font-size:clamp(16px,2.6vw,19px);letter-spacing:.03em;text-decoration:none;padding:18px 34px;border-radius:16px;box-shadow:0 6px 0 #9C7424,0 14px 28px rgba(156,116,36,.28);transition:transform .15s,box-shadow .15s;text-align:center}
+.btn:hover{transform:translateY(2px);box-shadow:0 4px 0 #9C7424,0 10px 20px rgba(156,116,36,.25)}
+.btn small{display:block;font-size:12px;font-weight:600;opacity:.8;margin-top:3px;letter-spacing:0}
+.btn.full{display:block;width:100%}
+.btn.ghost{background:#fff;color:var(--deep);box-shadow:0 5px 0 var(--lilac);border:2px solid var(--lilac)}
+
+/* for who */
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:22px;box-shadow:6px 6px 0 #EDE5F9}
+.card .ic{font-size:28px;margin-bottom:8px}
+.card h3{font-size:18px;margin-bottom:6px}
+.card p{font-size:15px;color:#4F3A7A}
+
+/* carousel */
+.carousel{position:relative}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 22px;scrollbar-width:thin}
+.track img{flex:0 0 auto;width:min(68vw,300px);border-radius:12px;scroll-snap-align:center;box-shadow:0 10px 26px rgba(75,42,123,.18);border:1px solid var(--line);background:#fff}
+.cnav{display:flex;justify-content:center;gap:12px}
+.cnav button{width:46px;height:46px;border-radius:50%;border:2px solid var(--lilac);background:#fff;color:var(--deep);font-size:20px;cursor:pointer}
+
+/* inside list */
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:18px}
+.li b{display:block;color:var(--deep);font-size:16px}
+.li span.e{font-size:26px;line-height:1}
+.li p{font-size:14.5px;color:#4F3A7A}
+
+/* offer band */
+.band{background:var(--deep);color:#fff;text-align:center;border-radius:28px;padding:40px 24px;position:relative;overflow:hidden}
+.band h2{color:#fff}
+.band p{color:#E7DCFF;max-width:640px;margin:0 auto 22px;font-size:17px}
+.band .stars{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.5) 1px,transparent 1.4px);background-size:34px 34px;opacity:.5;pointer-events:none}
+
+/* desire */
+.desire{display:grid;grid-template-columns:1fr;gap:12px;max-width:720px;margin:0 auto}
+.desire div{display:flex;gap:12px;align-items:center;background:#fff;border-radius:14px;padding:14px 18px;border-left:5px solid var(--gold);font-size:16px}
+.desire div::before{content:"♡";color:var(--purple);font-size:20px;font-weight:800}
+
+/* receive */
+.receive{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+.receive ul{list-style:none}
+.receive li{padding:12px 0;border-bottom:1.5px dashed var(--line);display:flex;justify-content:space-between;gap:12px;font-size:16px}
+.receive li b{color:var(--deep)}
+.receive li em{font-style:normal;font-weight:700;color:var(--purple);white-space:nowrap}
+
+/* bonus */
+.bonus{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.bn{background:#fff;border-radius:20px;padding:18px;text-align:center;border:2px solid var(--line)}
+.bn img{width:72%;margin:0 auto 10px}
+.bn .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.2em;color:#fff;padding:4px 12px;border-radius:20px;margin-bottom:8px}
+.bn h3{font-size:19px;margin-bottom:6px}
+.bn p{font-size:14px;color:#4F3A7A}
+
+/* plans */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;max-width:880px;margin:0 auto}
+.plan{background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px 24px;display:flex;flex-direction:column;text-align:center;position:relative}
+.plan.top{border:3px solid var(--gold);box-shadow:0 20px 40px rgba(122,82,199,.18)}
+.plan .rib{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-weight:800;font-size:12px;letter-spacing:.18em;padding:7px 16px;border-radius:20px;white-space:nowrap}
+.plan h3{font-size:22px;margin-bottom:4px}
+.plan .who2{font-size:14px;color:#7A64A8;margin-bottom:12px}
+.plan img{max-height:200px;object-fit:contain;margin:4px auto 12px}
+.plan ul{list-style:none;text-align:left;margin:4px 0 18px;flex:1}
+.plan li{padding:7px 0;font-size:15px;border-bottom:1px dashed var(--line)}
+.plan li::before{content:"✓ ";color:var(--purple);font-weight:800}
+.plan li.no{color:#B3A6CF}.plan li.no::before{content:"✕ ";color:#C9BEDF}
+.price{font-family:Lora,serif;font-weight:700;color:var(--deep);font-size:46px;line-height:1;margin:6px 0 4px}
+.price small{font-size:20px;vertical-align:top;margin-right:4px}
+.pnote{font-size:13px;color:#7A64A8;margin-bottom:16px}
+.bump{max-width:880px;margin:22px auto 0;text-align:center;font-size:14.5px;color:#5B3D99;background:#FFF6DF;border:1.5px dashed var(--gold);border-radius:14px;padding:14px 18px}
+
+/* guarantee */
+.guar{display:flex;gap:24px;align-items:center;max-width:760px;margin:0 auto;background:#fff;border:2px solid var(--line);border-radius:24px;padding:26px}
+.gseal{flex:none;width:120px;height:120px;border-radius:50%;background:var(--gold);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;box-shadow:0 0 0 7px #fff,0 0 0 9px var(--gold)}
+.gseal b{font-size:42px;font-family:Lora,serif;line-height:1}
+.gseal span{font-size:12px;letter-spacing:.15em}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.st{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:22px;text-align:center}
+.st .n{width:46px;height:46px;border-radius:50%;background:var(--purple);color:#fff;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto}
+details{background:#fff;border:1.5px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0 18px}
+summary{cursor:pointer;font-weight:700;color:var(--deep);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--purple);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 16px;color:#4F3A7A;font-size:15px}
+
+/* final */
+.final{text-align:center;background:linear-gradient(180deg,var(--cream),#EDE3FB)}
+.final img{width:min(340px,80%);margin:0 auto 10px}
+
+footer{background:var(--deep);color:#CBB8F0;font-size:13px;text-align:center;padding:30px 20px 90px}
+footer p{max-width:760px;margin:0 auto 8px}
+
+/* sticky mobile cta */
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 14px;background:rgba(251,247,240,.96);border-top:1px solid var(--line);display:none;z-index:20}
+.sticky .btn{display:block;padding:14px;font-size:16px}
+
+@media (max-width:760px){
+  section{padding:48px 0}
+  .plans,.receive{grid-template-columns:1fr}
+  .plans .plan.top{order:-1}
+  .steps{grid-template-columns:1fr}
+  .guar{flex-direction:column;text-align:center}
+  .sticky{display:block}
+  .hero .mock{width:calc(100% + 40px);max-width:none;margin-left:-20px;height:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">✦ <span>Acesso imediato</span> · 100% digital · em português ✦</div>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="kick">GUIA DA ARMY <span class="kr">방탄소년단</span></div>
+  <h1>O BTS de A a Z num guia só seu: <mark>+60 páginas</mark> pra ler, preencher e colecionar</h1>
+  <p class="sub">Da estreia em 2013 até a era ARIRANG em 2026. A história, os 7, as eras, os recordes e as páginas pra você viver o fandom, sozinha ou com a sua amiga ARMY.</p>
+  <img class="mock" src="img/mockup-principal.webp" alt="Guia da ARMY com páginas internas e os 4 bônus" width="1400" height="750">
+  <div class="seals"><span>⚡ Acesso imediato</span><span>📱 100% digital</span><span>🖨️ Pode imprimir</span></div>
+  <a class="btn js-main" href="#planos">QUERO MEU GUIA DA ARMY<small>acesso na hora, no seu e-mail</small></a>
+ </div>
+</header>
+
+<section class="dots">
+ <div class="wrap">
+  <h2>Para quem é</h2>
+  <p class="lead">Feito por fã, pra quem ama o BTS de verdade.</p>
+  <div class="who">
+   <div class="card"><div class="ic">💜</div><h3>ARMY de anos</h3><p>Quer tudo organizado num lugar só, do começo até 2026.</p></div>
+   <div class="card"><div class="ic">✨</div><h3>ARMY que chegou agora</h3><p>Quer entender a história do grupo sem se perder.</p></div>
+   <div class="card"><div class="ic">📒</div><h3>Quem ama colecionar</h3><p>Quer um cantinho só seu do BTS, pra colar fotos e lembranças.</p></div>
+   <div class="card"><div class="ic">🎁</div><h3>Mães e pais</h3><p>Procurando um presente especial pra filha ARMY.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Veja por dentro</h2>
+  <p class="lead">Algumas das páginas do guia. Arraste para o lado →</p>
+  <div class="carousel">
+   <div class="track" id="track">
+    <img src="img/pag01.webp" alt="Página Os 7" loading="lazy">
+    <img src="img/pag02.webp" alt="Perfil de um membro com moldura polaroid" loading="lazy">
+    <img src="img/pag03.webp" alt="Linha do tempo 2013 a 2026" loading="lazy">
+    <img src="img/pag04.webp" alt="ARIRANG, a volta dos 7" loading="lazy">
+    <img src="img/pag05.webp" alt="Minha história com o BTS" loading="lazy">
+    <img src="img/pag06.webp" alt="Diário do show" loading="lazy">
+    <img src="img/pag07.webp" alt="Quiz ARMY" loading="lazy">
+    <img src="img/pag08.webp" alt="Meu ingresso" loading="lazy">
+    <img src="img/pag09.webp" alt="Bingo ARMY" loading="lazy">
+    <img src="img/pag10.webp" alt="Frases em coreano" loading="lazy">
+   </div>
+   <div class="cnav"><button aria-label="Anterior" onclick="slide(-1)">←</button><button aria-label="Próxima" onclick="slide(1)">→</button></div>
+  </div>
+ </div>
+</section>
+
+<section class="dots">
+ <div class="wrap">
+  <h2>O que você encontra</h2>
+  <p class="lead">Tudo conferido e atualizado até novembro de 2026.</p>
+  <div class="list">
+   <div class="li"><span class="e">📖</span><div><b>A história completa</b><p>O nome, a estreia, os anos difíceis e a linha do tempo até 2026.</p></div></div>
+   <div class="li"><span class="e">💜</span><div><b>Os 7 membros</b><p>Perfil, carreira solo, serviço militar e curiosidades de cada um.</p></div></div>
+   <div class="li"><span class="e">💿</span><div><b>Todas as eras e álbuns</b><p>Com as histórias por trás das músicas e o universo BU.</p></div></div>
+   <div class="li"><span class="e">🏆</span><div><b>Recordes e turnês</b><p>As passagens pelo Brasil e a ARIRANG World Tour.</p></div></div>
+   <div class="li"><span class="e">🇰🇷</span><div><b>Ser ARMY</b><p>Glossário do fandom e frases em coreano com pronúncia.</p></div></div>
+   <div class="li"><span class="e">✏️</span><div><b>Páginas pra preencher</b><p>Diário do show, ingresso, calendário, quiz, bingo, jogo da memória e checklist de álbuns.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="band"><div class="stars"></div>
+   <h2>Tudo sobre o BTS, em português</h2>
+   <p>Nada de procurar em mil sites em inglês. Um guia bonito, conferido e atualizado até novembro de 2026, pra você ler, preencher e guardar.</p>
+   <a class="btn js-main" href="#planos">QUERO MEU GUIA DA ARMY</a>
+  </div>
+ </div>
+</section>
+
+<section class="dots">
+ <div class="wrap">
+  <h2>Para quem deseja</h2>
+  <p class="lead">Se você se identificou com algum desses, o guia é pra você.</p>
+  <div class="desire">
+   <div>Saber tudo do BTS sem precisar procurar em mil sites em inglês</div>
+   <div>Ter um álbum do fandom pra colar fotos, ingressos e lembranças</div>
+   <div>Brincar com a amiga: quiz, bingo e jogo da memória</div>
+   <div>Aprender palavras em coreano de um jeito leve</div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Tudo o que você vai receber</h2>
+  <p class="lead">No kit completo, além do guia, você leva 4 bônus.</p>
+  <div class="receive">
+   <img src="img/mockup-principal.webp" alt="Guia da ARMY e os 4 bônus" loading="lazy">
+   <ul>
+    <li><b>Guia da ARMY · o BTS de A a Z</b><em>+60 págs</em></li>
+    <li><b>Bônus 1 · Kit Melhores Amigas ARMY</b><em>10 págs</em></li>
+    <li><b>Bônus 2 · Kit de Troca</b><em>18 cartões</em></li>
+    <li><b>Bônus 3 · Cards pra postar</b><em>12 artes</em></li>
+    <li><b>Bônus 4 · Caderno de Hangul</b><em>11 págs</em></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section class="dots">
+ <div class="wrap">
+  <h2>Os 4 bônus do kit completo</h2>
+  <p class="lead">Pra curtir sozinha ou com a sua amiga ARMY.</p>
+  <div class="bonus">
+   <div class="bn"><img src="img/mockup-bonus1.webp" alt="Bônus 1" loading="lazy"><span class="tag" style="background:#E27BA6">BÔNUS 1</span><h3>Kit Melhores Amigas ARMY</h3><p>Teste da amizade com 20 perguntas, cartinhas, certificado, desafios em dupla e verdade ou desafio.</p></div>
+   <div class="bn"><img src="img/mockup-bonus2.webp" alt="Bônus 2" loading="lazy"><span class="tag" style="background:#3E9C88">BÔNUS 2</span><h3>Kit de Troca</h3><p>18 cartões pra imprimir e trocar (os 7 sem rosto e conquistas do grupo), com verso, tags e marcadores.</p></div>
+   <div class="bn"><img src="img/mockup-bonus3.webp" alt="Bônus 3" loading="lazy"><span class="tag" style="background:#D98A3F">BÔNUS 3</span><h3>Cards pra postar</h3><p>12 artes pra preencher e postar: 6 pro feed e 6 pros stories.</p></div>
+   <div class="bn"><img src="img/mockup-bonus4.webp" alt="Bônus 4" loading="lazy"><span class="tag" style="background:#5B72C9">BÔNUS 4</span><h3>Caderno de Hangul</h3><p>Aprenda as letras coreanas e escreva o seu nome e o dos 7, com folhas de caligrafia.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="planos">
+ <div class="wrap">
+  <h2>Escolha o seu plano</h2>
+  <p class="lead">Pagamento único. Acesso imediato no seu e-mail.</p>
+  <div class="plans">
+   <div class="plan">
+    <h3>Básico</h3><div class="who2">só o guia</div>
+    <img src="img/mockup-guia.webp" alt="Guia da ARMY" loading="lazy">
+    <ul>
+     <li>Guia da ARMY · o BTS de A a Z (+60 páginas)</li>
+     <li class="no">Kit Melhores Amigas ARMY</li>
+     <li class="no">Kit de Troca</li>
+     <li class="no">Cards pra postar</li>
+     <li class="no">Caderno de Hangul</li>
+    </ul>
+    <div class="price"><small>R$</small>16,99</div><div class="pnote">pagamento único</div>
+    <a class="btn ghost full" id="buy-basico" href="#planos">QUERO O BÁSICO</a>
+   </div>
+   <div class="plan top">
+    <div class="rib">KIT COMPLETO</div>
+    <h3>Completo</h3><div class="who2">guia + 4 bônus</div>
+    <img src="img/mockup-principal.webp" alt="Kit completo" loading="lazy">
+    <ul>
+     <li>Guia da ARMY · o BTS de A a Z (+60 páginas)</li>
+     <li>Bônus 1 · Kit Melhores Amigas ARMY</li>
+     <li>Bônus 2 · Kit de Troca</li>
+     <li>Bônus 3 · Cards pra postar</li>
+     <li>Bônus 4 · Caderno de Hangul</li>
+    </ul>
+    <div class="price"><small>R$</small>21,98</div><div class="pnote">pagamento único</div>
+    <a class="btn full" id="buy-completo" href="#planos">QUERO O KIT COMPLETO</a>
+   </div>
+  </div>
+  <div class="bump">💜 No checkout você também pode levar o <b>Pack de Wallpapers ARMY</b> (20 fundos de tela) por R$ 3,99. É opcional.</div>
+ </div>
+</section>
+
+<section class="dots">
+ <div class="wrap">
+  <div class="guar">
+   <div class="gseal"><b>7</b><span>DIAS</span></div>
+   <div><h2 style="text-align:left;font-size:28px">Garantia de 7 dias</h2><p>Se não gostar, é só pedir o reembolso pela Hotmart em até 7 dias depois da compra.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Como funciona o acesso</h2>
+  <p class="lead">Simples e rápido.</p>
+  <div class="steps">
+   <div class="st"><div class="n">1</div><h3>Finalize a compra</h3><p>Pix, cartão ou boleto.</p></div>
+   <div class="st"><div class="n">2</div><h3>Receba no e-mail</h3><p>O acesso chega pela Hotmart logo depois do pagamento.</p></div>
+   <div class="st"><div class="n">3</div><h3>Baixe e comece</h3><p>Leia no celular ou tablet, ou imprima em A4.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="dots">
+ <div class="wrap">
+  <h2>Perguntas frequentes</h2>
+  <p class="lead">Ficou com alguma dúvida?</p>
+  <div class="faq">
+   <details><summary>É oficial?</summary><p>Não. É um guia feito por fã, sem ligação com o BTS, a BIGHIT MUSIC ou a HYBE.</p></details>
+   <details><summary>Tem fotos dos membros?</summary><p>Não. Por respeito aos artistas, o guia usa molduras “cole aqui sua foto favorita”, pra você colocar as suas.</p></details>
+   <details><summary>Como eu recebo?</summary><p>Por e-mail, logo depois da compra, pela Hotmart.</p></details>
+   <details><summary>Posso imprimir?</summary><p>Pode, em A4. Também funciona no tablet e no celular.</p></details>
+   <details><summary>Sou menor de idade, posso comprar?</summary><p>A compra precisa ser feita por um adulto responsável.</p></details>
+   <details><summary>Quais as formas de pagamento?</summary><p>Pix, cartão de crédito e boleto.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="final">
+ <div class="wrap">
+  <img src="img/g1_heart.webp" alt="" loading="lazy">
+  <h2>Pronta pra ter o seu Guia da ARMY?</h2>
+  <p class="lead">O guia + os 4 bônus, por R$ 21,98. Borahae! 💜</p>
+  <a class="btn" id="buy-final" href="#planos">QUERO O KIT COMPLETO<small>acesso imediato</small></a>
+ </div>
+</section>
+
+<footer>
+ <p><b>Guia da ARMY · guia não oficial, feito por fã.</b></p>
+ <p>BTS e ARMY são marcas de seus respectivos donos. Este produto não tem ligação com o BTS, a BIGHIT MUSIC ou a HYBE e não contém fotos, logotipos oficiais, capas de álbum nem letras de música.</p>
+ <p>Produto digital vendido e entregue pela Hotmart.</p>
+</footer>
+
+<div class="sticky"><a class="btn" id="buy-sticky" href="#planos">QUERO MEU GUIA DA ARMY</a></div>
+
+<script>
+/* Coloque aqui os links de checkout da Hotmart */
+var CHECKOUT_BASICO = "";
+var CHECKOUT_COMPLETO = "";
+
+(function(){
+  if (CHECKOUT_BASICO) document.getElementById("buy-basico").href = CHECKOUT_BASICO;
+  if (CHECKOUT_COMPLETO) {
+    ["buy-completo","buy-final","buy-sticky"].forEach(function(id){ document.getElementById(id).href = CHECKOUT_COMPLETO; });
+    document.querySelectorAll(".js-main").forEach(function(a){ a.href = CHECKOUT_COMPLETO; });
+  }
+})();
+function slide(d){var t=document.getElementById("track");t.scrollBy({left:d*(t.clientWidth*0.8),behavior:"smooth"});}
+</script>
+</body>
+</html>
